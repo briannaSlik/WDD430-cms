@@ -5,12 +5,12 @@
     </div>
     <div class="panel-body">
         <div class="panel-group" *ngFor="let contact of contacts">
-            
-            <div class="panel panel-default">
-                <img [src]="contact.imageUrl" [alt]="contact.name">
+            <div class="panel panel-default">  
                 <div class="panel-body">
-                    <span>{{ contact.name }}</span>
-                </div>
+                    <img class="pull-right"  [src]="contact.imageUrl" [alt]="contact.name">
+                    <span class="align-middle">{{ contact.name }}</span>
+                    
+                </div> 
             </div>
         </div>
     </div>
