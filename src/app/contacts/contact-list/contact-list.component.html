@@ -4,14 +4,6 @@
         <h4>Contacts</h4>
     </div>
     <div class="panel-body">
-        <div class="panel-group" *ngFor="let contact of contacts">
-            <div class="panel panel-default">  
-                <div class="panel-body">
-                    <img class="pull-right"  [src]="contact.imageUrl" [alt]="contact.name">
-                    <span class="align-middle">{{ contact.name }}</span>
-                    
-                </div> 
-            </div>
-        </div>
+        <cms-contact-item *ngFor="let contactElement of contacts" [contact] = "contactElement" (contactSelected)="onContactSelected(contactElement)"></cms-contact-item>
     </div>
 </div>
