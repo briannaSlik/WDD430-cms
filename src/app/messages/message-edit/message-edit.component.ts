@@ -7,8 +7,6 @@ import { Message } from '../message.model';
   styleUrl: './message-edit.component.css'
 })
 export class MessageEditComponent {
-  // subjectText = 'Test';
-  // messageText = 'TestText';
   @ViewChild('subject', {static: true}) subject: ElementRef;
   @ViewChild('msgText', {static: true}) msgText: ElementRef;
 
