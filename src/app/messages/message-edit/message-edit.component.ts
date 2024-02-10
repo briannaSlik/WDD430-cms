@@ -11,15 +11,13 @@ export class MessageEditComponent {
   @ViewChild('subject', {static: true}) subject: ElementRef;
   @ViewChild('msgText', {static: true}) msgText: ElementRef;
 
-  currentSender: string = "BriAnna Slik"
-
   constructor(private messageService: MessageService) {}
 
   onSendMessage(){
     let subject: string = this.subject.nativeElement.value;
     let message: string = this.msgText.nativeElement.value;
-    let newMessage: Message = new Message('1', subject, message, this.currentSender)
-    this.messageService.addMessage(newMessage);
+    let newMessage: Message = new Message('6', subject, message, '1')
+    this.messageService.addMessage(newMessage);    
   }
 
   onClear(){

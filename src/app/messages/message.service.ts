@@ -18,11 +18,11 @@ export class MessageService {
   }
 
   getMessage(id: string): Message{
-    this.messages.forEach((message)=>{
+    for (let message of this.messages){
       if (message.id === id){
         return message;
       }
-    })
+    }
     return null;
   }
 

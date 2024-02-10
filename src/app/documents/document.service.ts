@@ -18,14 +18,11 @@ export class DocumentService {
   }
 
   getDocument(id: string): Document{
-    this.documents.forEach((document) => {
-      if (document.id === id){
+    for (let document of this.documents){
+      if (document.id == id){
         return document;
       }
-    })
-
-    return null;
-  }
-
-
+    }
+    return null
+   }
 }
