@@ -7,14 +7,15 @@ import { MOCKDOCUMENTS } from './MOCKDOCUMENTS';
 })
 export class DocumentService {
   documents: Document[];
-  documentSelectedEvent: EventEmitter<Document> = new EventEmitter<Document>()
+  documentSelectedEvent: EventEmitter<Document> = new EventEmitter<Document>();
+  documentChangedEvent: EventEmitter<Document[]> = new EventEmitter<Document[]>();
 
   constructor() { 
     this.documents = MOCKDOCUMENTS;
   }
 
   getDocuments(): Document[]{
-    return this.documents.slice()
+    return this.documents.slice();
   }
 
   getDocument(id: string): Document{
@@ -23,6 +24,24 @@ export class DocumentService {
         return document;
       }
     }
-    return null
+    return null;
+   }
+
+   deleteDocument(document: Document){
+    
+    // Make sure document exits
+    if(!document){
+      return;
+    }
+
+    // Check if there are any documents remaining
+    const position = this.documents.indexOf(document);
+    if(position < 0){
+      return;
+    }
+
+    // Remove document and emit event 
+    this.documents.splice(position, 1);
+    this.documentChangedEvent.emit(this.documents.slice());
    }
 }

@@ -8,8 +8,8 @@
         <div class="row">
             <div class="col-xs-12">
                 <img [src]="contact.imageUrl" [alt]="contact.name">
-                <button class="btn btn-primary pull-right">Edit</button>
-                <button class="btn btn-danger pull-right">Delete</button>
+                <a routerLink="edit" class="btn btn-primary pull-right">Edit</a>
+                <a (click)="onDelete(contact)" class="btn btn-danger pull-right">Delete</a>
             </div>
         </div>
     </div>
