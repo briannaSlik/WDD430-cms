@@ -25,6 +25,7 @@ export class ContactListComponent implements OnInit, OnDestroy{
     // })
 
     this.subscription = this.contactService.contactListChangedEvent.subscribe((contacts: Contact[])=>{
+      console.log(contacts)
       this.contacts = contacts;
     })
   }

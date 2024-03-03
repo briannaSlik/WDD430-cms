@@ -43,6 +43,7 @@ export class ContactService {
    }
 
    addContact(newContact: Contact){
+
     if (!newContact) return;
 
     this.maxContactId++
